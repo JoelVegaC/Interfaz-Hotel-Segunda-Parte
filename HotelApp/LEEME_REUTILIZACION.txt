@@ -1,0 +1,41 @@
+HOTELAPP - GRUPO 8: REUTILIZACIÓN DE COMPONENTES
+
+Abre la carpeta HotelApp (la que contiene src y .vscode) en VS Code.
+Ejecuta con F5 > Ejecutar HotelApp, usando tu configuración de JavaFX.
+Main.java, reservas.xml y la configuración son los del proyecto que enviaste.
+
+QUÉ HEMOS AÑADIDO
+- Inicio: muestra tres tarjetas con las primeras habitaciones del XML.
+- Habitaciones: conserva la tabla y la búsqueda. Al buscar aparece una tarjeta.
+- Ver detalles: abre un aviso con la información completa de esa habitación.
+
+DÓNDE ESTÁ LA REUTILIZACIÓN
+Solo existe un diseño de tarjeta: tarjeta_habitacion.fxml.
+TarjetaHabitacionController.java controla los textos y el botón de cada tarjeta.
+HotelController.java carga ese mismo diseño cada vez que necesita una tarjeta.
+Creamos varias tarjetas del mismo componente; cada una recibe sus propios datos.
+No copiamos el diseño en las dos pantallas.
+
+MÉTODOS PÚBLICOS DEL COMPONENTE
+mostrarDatos(habitacion): coloca número, tipo, capacidad, precio y estado.
+setDestacada(true/false): permite cambiar el borde para destacar una tarjeta.
+setAccionDetalles(accion): recibe lo que debe ocurrir al pulsar Ver detalles.
+Runnable es una acción que guardamos para ejecutarla cuando se pulsa el botón.
+
+RESPONSABILIDADES
+La tarjeta muestra datos y avisa cuando se pulsa su botón.
+La pantalla lee el XML, elige la habitación y decide cómo mostrar sus detalles.
+
+PRUEBAS Y CAPTURAS
+1. Abre Inicio y comprueba las tres tarjetas. Pulsa Ver detalles en dos distintas.
+2. Abre Habitaciones y busca 112: aparece la misma tarjeta con estado disponible.
+3. Busca 101: ocupada. Busca 123: mantenimiento. Busca 999: no existe.
+4. Captura Inicio y Habitaciones buscando 112 para enseñar el componente en dos vistas.
+5. Para demostrar que se reutiliza, cambia el estilo .numero-tarjeta en estilos.css
+   y reinicia: cambiarán los números de las tarjetas de ambas pantallas.
+
+EXPLICACIÓN SIMPLE PARA CLASE
+Hemos creado una tarjeta de habitación y la usamos en dos pantallas.
+Le pasamos los datos para que cada tarjeta muestre una habitación diferente.
+El diseño está en un solo archivo, así que al cambiarlo se actualizan todas.
+La pantalla decide qué ocurre al pulsar Ver detalles.

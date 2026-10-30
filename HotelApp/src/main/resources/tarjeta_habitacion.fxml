@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.VBox?>
+<VBox fx:id="tarjeta" spacing="12" prefWidth="260" minWidth="230" maxWidth="300" styleClass="tarjeta"
+      xmlns:fx="http://javafx.com/fxml/1" fx:controller="TarjetaHabitacionController">
+    <Label text="HABITACIÓN" styleClass="nota"/>
+    <Label fx:id="lblNumero" styleClass="numero-tarjeta"/>
+    <Label fx:id="lblTipo" styleClass="subtitulo"/>
+    <Label fx:id="lblCapacidad"/>
+    <Label fx:id="lblPrecio" styleClass="precio-tarjeta"/>
+    <Label fx:id="lblEstado" styleClass="estado-tarjeta"/>
+    <Button text="Ver detalles" onAction="#verDetalles" maxWidth="Infinity" styleClass="principal"/>
+</VBox>
